@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    rescue_from ActiveRecord;:RecordInvalid, with: :render_unprocessable_entity_response
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def create_account
         user = User.create!(user_params)
@@ -25,6 +25,10 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def index 
+        users = User.all
+        render json:users
+    end
     private
 
     def user_params
