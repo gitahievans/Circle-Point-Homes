@@ -8,6 +8,11 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def auto_login
+        user = User.find(session[:user_id])
+        render json: user, status: :created
+    end
+
     def login
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
