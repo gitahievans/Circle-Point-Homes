@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  # USERS AUTHENTICATION
+  post '/signup', to: 'users#create_account'
+  post '/login', to: 'users#login'
+  delete '/logout', to: 'users#logout'
   
 
   resources :houses
