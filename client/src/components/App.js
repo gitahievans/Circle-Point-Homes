@@ -1,7 +1,8 @@
 import React, {useState, useMemo} from "react";
 import Home from "./Home";
 import { Routes, Route} from "react-router-dom";
-
+import SignupForm from './SignupForm';
+import Navbar from './Navbar'
 import {UserContext} from "./UserContext"
 
 
@@ -52,13 +53,22 @@ function App() {
 
     return(
         <div className="App">
+        
+        <div>
+         <Navbar/>
+         <SignupForm/>
+        </div>
           <UserContext.Provider value={providerValue}>
             <h1>Circle Point Homes</h1>
+
             <Routes>
-            <Route path="/"element={<Home error={error} login={login} logout={logout}/>} />
+                  <Route path="/"element={<Home error={error} login={login} logout={logout}/>} />
+                  <Route exact path="/" element={<SignupForm />}></Route>
             </Routes>
             </UserContext.Provider>
             </div>
     )
 }
  export default App;
+
+

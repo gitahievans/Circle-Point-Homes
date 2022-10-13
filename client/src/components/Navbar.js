@@ -16,6 +16,10 @@ function Navbar() {
          <Link to="/">About Us</Link>
       </li>
 
+      <li>
+         <Link to="/">Content Us</Link>
+      </li>
+
         {/* ['Home', 'Landords', 'About'].map((item)=>(
         <li key={item}>
         {item}
