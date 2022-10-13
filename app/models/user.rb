@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    enum :user_type, { landlord: 0, tenant: 1 }
+    enum user_type: [:landlord, :tenant]
     has_secure_password
     has_many :houses
 
