@@ -1,26 +1,26 @@
-import React from 'react'
-import Navbar from './Navbar'
-import { BrowserRouter as Router, Routes } from "react-router-dom";
-import SignUp from './SignupForm';
+// import React from 'react'
+// import Navbar from './Navbar'
+// import { BrowserRouter as Router, Routes } from "react-router-dom";
+// import SignUp from './SignupForm';
 
 
-function App() {
+// function App() {
 
-  return (
-    <Router>
-    <div>
-      <Navbar/>
-      <SignUp/>
+//   return (
+//     <Router>
+//     <div>
+//       <Navbar/>
+//       <SignUp/>
 
-    </div>
+//     </div>
 
 
-    <Routes>
-        {/* <Route exact path="/" element={<SignupForm />}></Route> */}
+//     <Routes>
+//         {/* <Route exact path="/" element={<SignupForm />}></Route> */}
        
-      </Routes>
-    </Router>
-  )
-}
+//       </Routes>
+//     </Router>
+//   )
+// }
 
-export default App
+// export default App
