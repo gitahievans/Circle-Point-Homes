@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  # USERS AUTHENTICATION
+  post '/signup' to: 'users#create_account'
+  post '/login' to: 'users#login'
+  delete '/logout' to: 'users#logout'
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
