@@ -7,7 +7,7 @@ function App(){
         <div className="App">
             <h1>Circle Point Homes</h1>
             <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/"element={<Home/>} />
             </Routes>
             </div>
     )
