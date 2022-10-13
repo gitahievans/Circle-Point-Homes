@@ -2,41 +2,25 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     
     before_action :authorize
-    skip_before_action :authorize, only: [:create_account, login]
 
-    def create_account
-        user = User.create!(user_params)
-        session[:user_id] ||= user.id
-        session[:user_type] ||= user.user_type
-        render json: user
+    def index
+        users = User.all
+        render json: users, status: :ok
     end
 
-    def auto_login
+    def index_specific
+        users = User.where(user_type: params[:user_type]).all
+        render json: users, status: :ok
+    end
+
+    def update_user
         user = User.find(session[:user_id])
+        user.update!(user_params)
         render json: user, status: :created
     end
 
-    def login
-        user = User.find_by(email: params[:email])
-        if user&.authenticate(params[:password])
-            session[:user_id] ||= user.id
-            session[:user_type] ||= user.user_type
-            render json: user, status: :created
-        else
-            render json: {errors: [error: "Invalid User"]}, status: :not_found
-        end
-    end
 
-    def logout
-        session.delete :user_id
-        session.delete :user_type
-        head :no_content
-    end
 
-    def index 
-        users = User.all
-        render json:users
-    end
     private
 
     def user_params

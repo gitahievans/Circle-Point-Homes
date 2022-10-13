@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  # USERS AUTHENTICATION
-  post '/signup', to: 'users#create_account'
-  get '/me', to: 'users#auto_login'
-  post '/login', to: 'users#login'
-  delete '/logout', to: 'users#logout'
-  
-  get '/index', to: 'users#index'
+  # USERS_SESSION AUTHENTICATION
+  post '/signup', to: 'sessions#create_account'
+  get '/me', to: 'sessions#auto_login'
+  post '/login', to: 'sessions#login'
+  delete '/logout', to: 'sessions#logout'
+
+  # USERS GET/POST/PATCH/DELETE  
+  get '/users/all', to: 'users#index'
+  get '/users/:user_type', to: 'users#index_specific'
+  patch '/me/update', to: 'users#update_user'
 
   # HOUSES GET/POST/PATCH/DELETE
   resources :houses
