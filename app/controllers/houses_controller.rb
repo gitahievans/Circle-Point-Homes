@@ -2,6 +2,10 @@ class HousesController < ApplicationController
 
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
+before_action :authorize
+before_action :authorize_add_house
+skip_before_action :authorize_add_house, only: [:index, :show]
+
     # list all houses
     def index 
         houses = House.all
