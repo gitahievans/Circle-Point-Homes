@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { BrowserRouter as Router, Routes } from "react-router-dom";
+import SignUp from './SignupForm';
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <Router>
     <div>
       <Navbar/>
-      
+      <SignUp/>
 
     </div>
 
