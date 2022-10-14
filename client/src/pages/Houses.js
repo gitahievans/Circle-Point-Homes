@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 
-const houses_URL = "https://api-bright.herokuapp.com/homes";
+const houses_URL = "/houses";
 console.log(houses_URL);
 
 function Houses() {
