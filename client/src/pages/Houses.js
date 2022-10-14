@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-
 import React, { useEffect, useState } from "react";
 
 
@@ -57,4 +54,3 @@ function Houses() {
 }
 
 export default Houses;
->>>>>>> 5c75139c4c482530d7c607e95af40349a9ada50d
