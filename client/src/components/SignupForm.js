@@ -6,7 +6,7 @@ import Textarea from "../styles/Textarea";
 import Error from "../styles/Error";
 import Button from "../styles/Button";
 
-function SignUp({ setUser }) {
+function SignUpForm({ setUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -117,4 +117,4 @@ function SignUp({ setUser }) {
   );
 }
 
-export default SignUp;
+export default SignUpForm;
