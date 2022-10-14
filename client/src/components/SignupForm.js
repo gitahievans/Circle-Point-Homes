@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
 function SignUp({ setUser }) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [bio, setBio] = useState("");
+  const [userType, setUserType] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,13 +18,19 @@ function SignUp({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        name,
         email,
         password,
         password_confirmation: passwordConfirmation,
+        bio: bio,
+        userType,
       }),
     }).then((r) => {
+      setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => setUser(user));
+      } else {
+        r.json().then((err) => setErrors(err.errors))
       }
     });
   }
