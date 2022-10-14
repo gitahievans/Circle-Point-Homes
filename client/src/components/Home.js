@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import UserLogin from './UserLogin'
+import UserLogin from './LoginForm'
 
 function Home({ login, logout, error, errorMessage }) {
     const [user] = useState("");

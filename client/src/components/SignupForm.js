@@ -3,6 +3,7 @@ import FormField from "../styles/FormField";
 import Label from "../styles/Label";
 import Input from "../styles/Input";
 import Textarea from "../styles/Textarea";
+import Error from "../styles/Error";
 import Button from "../styles/Button";
 
 function SignUp({ setUser }) {
@@ -12,7 +13,7 @@ function SignUp({ setUser }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [bio, setBio] = useState("");
   const [userType, setUserType] = useState("");
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
@@ -34,10 +35,9 @@ function SignUp({ setUser }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      } 
-      // else {
-      //   r.json().then((err) => setErrors(err.errors))
-      // }
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
     });
   }
 
@@ -107,7 +107,11 @@ function SignUp({ setUser }) {
         <FormField>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
-
+        <FormField>
+          {errors.map((err) => (
+            <Error key={err}>{err}</Error>
+          ))}
+        </FormField>
       </form>
     </div>
   );
