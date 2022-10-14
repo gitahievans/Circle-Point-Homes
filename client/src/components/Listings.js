@@ -24,9 +24,10 @@ function Listings() {
     <div className="grid" key={listing.id}>
      
       <div className="cards">
-         <h5>title:{listing.title}</h5>
-        <h5>Location:{listing.location}</h5>
-        <h5>Name: {listing.name}</h5>
+        <h5>title:{listing.title}</h5>
+        <h5>category:{listing.category}</h5>
+        <h5>image: {listing.image}</h5>
+        {/* <h5>location: {listing.location}</h5> */}
         <p>{listing.description}</p>
        
       </div>

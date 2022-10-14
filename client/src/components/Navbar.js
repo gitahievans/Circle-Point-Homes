@@ -10,14 +10,14 @@ function Navbar() {
          <Link to="/">Home</Link>
       </li>
       <li>
-         <Link to="/">Listings</Link>
+         <Link to="/listings">Listings</Link>
       </li>
       <li>
-         <Link to="/">About Us</Link>
+         <Link to="/about">About Us</Link>
       </li>
 
       <li>
-         <Link to="/">Content Us</Link>
+         <Link to="/contacts">Conctact Us</Link>
       </li>
 
         {/* ['Home', 'Landords', 'About'].map((item)=>(
