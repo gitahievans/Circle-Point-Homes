@@ -1,6 +1,6 @@
-
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "../styles/Navbar.css"
 
 function Navbar({ setUser }) {
 
@@ -15,22 +15,23 @@ function Navbar({ setUser }) {
   }
 
   return (
-    <div>
+    <div className='navbar'>
+      <h1 className='navbar-logo'>♻️ PointHomes</h1>
     <ul>
-      <li>
-         <Link to="/">Home</Link>
+      <li className='nav-links'>
+         <Link className='nav-text' to="/">Home</Link>
       </li>
-      <li>
-         <Link to="/houses">Houses</Link>
+      <li className='nav-links'>
+         <Link className='nav-text' to="/houses">Houses</Link>
       </li>
-      <li>
-         <Link to="/about">About Us</Link>
+      <li className='nav-links'>
+         <Link className='nav-text' to="/about">About Us</Link>
       </li>
-      <li>
-         <Link to="/add-house">Add House</Link>
+      <li className='nav-links'>
+         <Link className='nav-text' to="/add-house">Add House</Link>
       </li>
-      <li>
-         <Link to="/contact-us">Contact Us</Link>
+      <li className='nav-links'>
+         <Link className='nav-text' to="/contact-us">Contact Us</Link>
       </li>
 
         {/* ['Home', 'Landords', 'About'].map((item)=>(

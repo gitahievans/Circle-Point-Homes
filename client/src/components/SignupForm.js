@@ -2,21 +2,19 @@ import React, { useState } from "react";
 import FormField from "../styles/FormField";
 import Label from "../styles/Label";
 import Input from "../styles/Input";
-import Textarea from "../styles/Textarea";
-import Error from "../styles/Error";
+import Error from '../styles/Error';
+import Textarea from '../styles/Textarea'
 import Button from "../styles/Button";
 
-// function SignUpForm({ onLogin }) {
-function SignUpForm() {
-  const [user, setUser] = useState(null)
+function SignUp({ setUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [userType, setUserType] = useState("");
+  const [bio, setBio] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [bio, setBio] = useState("");
-  const [userType, setUserType] = useState("");
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState("");
+  const [isLoading, setIsLoading] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,19 +26,15 @@ function SignUpForm() {
       body: JSON.stringify({
         name,
         email,
+        userType,
         password,
         password_confirmation: passwordConfirmation,
-        bio: bio,
-        userType,
+        bio,
       }),
     }).then((r) => {
-      setIsLoading(false);
+      console.log({r})
       if (r.ok) {
-        // r.json().then((user) => onLogin(user));
         r.json().then((user) => setUser(user));
-      } 
-      else {
-        r.json().then((err) => setErrors(err.errors));
       }
     });
   }
@@ -112,8 +106,8 @@ function SignUpForm() {
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
         <FormField>
-          {errors.map((err) => (
-            <Error key={err}>{err}</Error>
+          {errors.map((e) => (
+            <Error key={e}>{e}</Error>
           ))}
         </FormField>
       </form>
@@ -121,4 +115,4 @@ function SignUpForm() {
   );
 }
 
-export default SignUpForm;
+export default SignUp;
