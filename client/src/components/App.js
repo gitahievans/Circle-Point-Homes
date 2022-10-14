@@ -2,42 +2,42 @@ import React, { useEffect, useState } from "react";
 import Home from "./Home";
 import { Routes, Route} from "react-router-dom";
 import Login from "../pages/Login";
-import SignupForm from './SignupForm';
+import AddHouse from "../pages/AddHouse";
+import Houses from "../pages/Houses";
+import ContactUs from "../pages/ContactUs";
+import About from "../pages/About";
 import Navbar from './Navbar'
-import {UserContext} from "./UserContext"
+
 
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     fetch('/me').then((r) => {
       if (r.ok) {
-        r.json().then((user) => setCurrentUser(user))
+        r.json().then((user) => setUser(user))
       }
     })
   }, [])
 
-  if (!currentUser) {
-    return (
-      <Login setUser={setCurrentUser} />
-    )
-  }
+  // if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <Login />;
 
   return(
-    <div className="App">
-        
-    <div>
-      <Navbar />
-    </div>
-      <UserContext.Provider value={providerValue}>
+    <div className="App">        
+      <div>
+        <Navbar setUser={setUser}/>
+      </div>
       <h1>Circle Point Homes</h1>
-
-      <Routes>
-        <Route path="/"element={<Home error={error} login={login} logout={logout}/>} />
-        <Route exact path="/" element={<SignupForm />}></Route>
+      <Routes >
+        <Route exact path="/" element={<Home />}/>
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/houses' element={<Houses />} />
+        <Route exact path='/contact-us' element={<ContactUs />} />
+        <Route exact path='/add-house' element={<AddHouse />} />
+        {/* <Route path="/add_new_home" element={<NewHome />} />*/}
       </Routes>
-      </UserContext.Provider>
     </div>
     )
 }

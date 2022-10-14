@@ -5,7 +5,9 @@ import Input from "../styles/Input";
 import Error from '../styles/Error';
 import Button from "../styles/Button";
 
-function LoginForm({ setUser }) {
+// function LoginForm({ onLogin }) {
+function LoginForm() {
+  const [user, setUser] = useState(null)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -24,6 +26,7 @@ function LoginForm({ setUser }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
+        // r.json().then((user) => onLogin(user))
         r.json().then((user) => setUser(user))
       } else {
         r.json().then((err) => setErrors(err.errors))

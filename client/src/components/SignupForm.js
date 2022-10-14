@@ -6,7 +6,9 @@ import Textarea from "../styles/Textarea";
 import Error from "../styles/Error";
 import Button from "../styles/Button";
 
-function SignUpForm({ setUser }) {
+// function SignUpForm({ onLogin }) {
+function SignUpForm() {
+  const [user, setUser] = useState(null)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,8 +36,10 @@ function SignUpForm({ setUser }) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
+        // r.json().then((user) => onLogin(user));
         r.json().then((user) => setUser(user));
-      } else {
+      } 
+      else {
         r.json().then((err) => setErrors(err.errors));
       }
     });

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import UserLogin from './LoginForm'
+import Login from "../pages/Login";
 
 function Home({ login, logout, error, errorMessage }) {
     const [user] = useState("");
@@ -13,7 +13,7 @@ function Home({ login, logout, error, errorMessage }) {
                     <button className="logout-button"onClick={logout}>Logout</button>
                 </div>
             ) : (
-                <UserLogin login={login} logout={logout} error={error} errorMessage={errorMessage}/>)}
+                <Login login={login} logout={logout} error={error} errorMessage={errorMessage}/>)}
 
     </div>
   )
