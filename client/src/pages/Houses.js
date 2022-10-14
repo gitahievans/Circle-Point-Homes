@@ -16,6 +16,7 @@ const Houses = () => {
 
     const handleSubmit = () => {
      
+      
 			// add functionality to hit api and submit data and correct url
 
 			//const payload = {
