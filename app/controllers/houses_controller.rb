@@ -10,13 +10,15 @@ skip_before_action :authorize_add_house, only: [:index, :show]
     def index 
         houses = House.all
         render json: houses, status: :ok
-    end
+    end 
+
     # show one house
     def show 
         house = find_house
         render json: house, status: :ok
     end
 
+    # Create House
     def create 
         user = User.find(session[:user_id])
         if user.valid?
@@ -27,12 +29,14 @@ skip_before_action :authorize_add_house, only: [:index, :show]
         end
     end
 
+    # Update House
     def update 
         house = find_house
         house.update(house_params)
         render json: house
     end
 
+    # Delete house
     def destroy 
         house = find_house
         house.destroy
