@@ -1,9 +1,20 @@
 import React, { useState } from "react";
+import FormField from "../styles/FormField";
+import Label from "../styles/Label";
+import Input from "../styles/Input";
+import Error from '../styles/Error';
+import Textarea from '../styles/Textarea'
+import Button from "../styles/Button";
 
 function SignUp({ setUser }) {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [userType, setUserType] = useState("");
+  const [bio, setBio] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [errors, setErrors] = useState("");
+  const [isLoading, setIsLoading] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -13,9 +24,12 @@ function SignUp({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
+        name,
+        email,
+        userType,
         password,
         password_confirmation: passwordConfirmation,
+        bio,
       }),
     }).then((r) => {
       console.log({r})
