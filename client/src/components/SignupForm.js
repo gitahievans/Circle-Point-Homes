@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormField from "../styles/FormField";
 
 function SignUp({ setUser }) {
   const [name, setName] = useState("");
@@ -7,7 +8,7 @@ function SignUp({ setUser }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [bio, setBio] = useState("");
   const [userType, setUserType] = useState("");
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
@@ -39,31 +40,69 @@ function SignUp({ setUser }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          id="email"
-          autoComplete="off"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-        />
-        <label htmlFor="password">Password Confirmation</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          autoComplete="current-password"
-        />
-        <button type="submit">Sign Up</button>
+        <FormField>
+          <Label htmlFor="name">Name</Label>
+          <Input
+            type="text"
+            id="name"
+            autoComplete="off"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </FormField>
+        <FormField>
+          <Label htmlFor="email">Email</Label>
+          <Input
+            type="text"
+            id="email"
+            autoComplete="off"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </FormField>
+        <FormField>
+          <Label htmlFor="password">Password</Label>
+          <Input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+        </FormField>
+        <FormField>
+          <Label htmlFor="password">Password Confirmation</Label>
+          <Input
+            type="password"
+            id="password_confirmation"
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            autoComplete="current-password"
+          />
+        </FormField>
+        <FormField>
+          <Label htmlFor="userType">User-type</Label>
+          <Input
+            type="text"
+            id="userType"
+            autoComplete="off"
+            value={userType}
+            onChange={(e) => setUserType(e.target.value)}
+          />
+        </FormField>
+        <FormField>
+          <Label htmlFor="bio">Bio</Label>
+          <Textarea
+            rows="3"
+            id="bio"
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+          />
+        </FormField>
+        <FormField>
+          <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
+        </FormField>
+
       </form>
     </div>
   );
