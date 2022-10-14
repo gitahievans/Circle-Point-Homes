@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function SignUp({ setUser }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
@@ -13,7 +13,7 @@ function SignUp({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
+        email,
         password,
         password_confirmation: passwordConfirmation,
       }),
@@ -28,13 +28,13 @@ function SignUp({ setUser }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="email">Email</label>
         <input
           type="text"
-          id="username"
+          id="email"
           autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input
