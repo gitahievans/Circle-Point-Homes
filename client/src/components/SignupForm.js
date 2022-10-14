@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import FormField from "../styles/FormField";
+import Label from "../styles/Label";
+import Input from "../styles/Input";
+import Textarea from "../styles/Textarea";
+import Button from "../styles/Button";
 
 function SignUp({ setUser }) {
   const [name, setName] = useState("");
@@ -30,9 +34,10 @@ function SignUp({ setUser }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors))
-      }
+      } 
+      // else {
+      //   r.json().then((err) => setErrors(err.errors))
+      // }
     });
   }
 
