@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Home from "./Home";
 import { Routes, Route} from "react-router-dom";
+import Login from "../pages/Login";
 import SignupForm from './SignupForm';
 import Navbar from './Navbar'
 import {UserContext} from "./UserContext"
@@ -17,7 +18,7 @@ function App() {
     })
   }, [])
 
-  if (!user) {
+  if (!currentUser) {
     return (
       <Login setUser={setCurrentUser} />
     )
