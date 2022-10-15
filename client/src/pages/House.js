@@ -30,8 +30,7 @@ function Houses() {
   useEffect(housesFetcher, []);
 
 
-  const eachHouse = houses.map((house) => (
-  
+  const eachHouse = houses.map((house) => (  
     <Carousel activeIndex={index} onSelect={handleSelect} key={house.id}>
       <Carousel.Item>
         <img
