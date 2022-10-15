@@ -36,7 +36,6 @@ function App() {
         <Route exact path='/houses' element={<Houses />} />
         <Route exact path='/contact-us' element={<ContactUs />} />
         <Route exact path='/add-house' element={<AddHouse />} />
-        {/* <Route path="/add_new_home" element={<NewHome />} />*/}
       </Routes>
     </div>
     )
