@@ -44,5 +44,5 @@ https://app.uizard.io/p/db7d27fe
     Elijah Bundi
     Bonaventure Ochieng
     Evans Gitahi
-    Evans Gitahi
+    Gladys Angela
 
