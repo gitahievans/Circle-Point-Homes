@@ -27,17 +27,19 @@ function App() {
   return(
     <div className="App">        
       <div>
-        <Navbar setUser={setUser}/>
+        <Navbar user={user} setUser={setUser}/>
       </div>
-      <h1>Circle Point Homes</h1>
-      <Routes >
-        <Route exact path="/" element={<Home />}/>
-        <Route exact path='/about' element={<About />} />
-        <Route exact path='/houses' element={<Houses />} />
-        <Route exact path='/contact-us' element={<ContactUs />} />
-        <Route exact path='/add-house' element={<AddHouse />} />
-        {/* <Route path="/add_new_home" element={<NewHome />} />*/}
-      </Routes>
+      <main>
+        <h1>Circle Point Homes</h1>
+        <Routes >
+          <Route exact path="/" element={<Home />}/>
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/houses' element={<Houses />} />
+          <Route exact path='/contact-us' element={<ContactUs />} />
+          <Route exact path='/add-house' element={<AddHouse />} />
+          {/* <Route path="/add_new_home" element={<NewHome />} />*/}
+        </Routes>
+      </main>
     </div>
     )
 }

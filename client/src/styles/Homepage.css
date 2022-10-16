@@ -1,0 +1,98 @@
+.homepage-container {
+    background: url('/public/images/img-home.jpg') center center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.homepage-container > h1 {
+    color: #fff;
+    font-size: 100px;
+    margin-top: -100px;
+}
+
+.homepage-container > p {
+    margin-top: 8px;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.homepage-btns {
+    margin-top: 32px;
+    font-size: 20px;
+}
+
+/* .homepage-btns .btn {
+    margin: 6px;
+}
+
+.btn {
+    padding: 8px 20px;
+    font-size: 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn--outline {
+    padding: 8px 20px;
+    font-size: 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+    margin-right: 8px;
+}
+
+
+.btn--outline:hover {
+    
+    background-color: var(--primary);
+    color: #242424;
+    border: 1px solid var(--primary);
+    margin-left: 8px;
+} 
+
+.fa-play-circle {
+    margin-left: 4px;
+} */
+
+@media screen and (max-width: 960px) {
+    .homepage-container > h1 {
+        font-size: 70px;
+        margin-top: -150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homepage-container > h1 {
+        font-size: 50px;
+        margin-top: -100px;
+    }
+
+    .homepage-container > p {
+        font-size: 30px;
+    }
+
+    /* .btn-mobile {
+        display: block;
+        text-decoration: none;
+    }
+
+    .btn {
+        width: 100%;
+    } */
+}
