@@ -40,6 +40,7 @@ function LoginForm({ onLogin }) {
           type="text"
           id="email"
           autoComplete="off"
+          placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -50,6 +51,7 @@ function LoginForm({ onLogin }) {
           type="password"
           id="password"
           autoComplete="current-password"
+          placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
