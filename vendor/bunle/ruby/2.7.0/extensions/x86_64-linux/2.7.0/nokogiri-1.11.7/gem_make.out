@@ -1,0 +1,69 @@
+current directory: /home/gitahievans/Development/Code/phase4/final-project/project-template-react-rails-api/vendor/bunle/ruby/2.7.0/gems/nokogiri-1.11.7/ext/nokogiri
+/home/gitahievans/.rbenv/versions/2.7.4/bin/ruby -I /home/gitahievans/.rbenv/versions/2.7.4/lib/ruby/2.7.0 -r ./siteconf20221014-102784-1ygimxv.rb extconf.rb --use-system-libraries --with-xml2-include\=/usr/local/opt/libxml2/include/libxml2
+checking for whether -g is accepted as CFLAGS... yes
+checking for whether -Winline is accepted as CFLAGS... yes
+checking for whether -Wmissing-noreturn is accepted as CFLAGS... yes
+Building nokogiri using system libraries.
+checking for gzdopen() in -lz... yes
+checking for xmlParseDoc() in -lxml2... no
+checking for xmlParseDoc() in -llibxml2... no
+checking for libxml-2.0 using `pkg_config`... yes: ["-I/usr/include/libxml2 ", "", "-lxml2"]
+checking for xmlParseDoc() in -lxml2... yes
+checking for xsltParseStylesheetDoc() in -lxslt... yes
+checking for exsltFuncRegister() in -lexslt... yes
+checking for xmlHasFeature()... yes
+checking for xmlFirstElementChild()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetValidStructuredErrors()... yes
+checking for xmlSchemaSetValidStructuredErrors()... yes
+checking for xmlSchemaSetParserStructuredErrors()... yes
+checking for vasprintf()... yes
+checking for whether -DNOKOGIRI_OTHER_LIBRARY_VERSIONS="\"\"" is accepted as CPPFLAGS... yes
+creating Makefile
+
+current directory: /home/gitahievans/Development/Code/phase4/final-project/project-template-react-rails-api/vendor/bunle/ruby/2.7.0/gems/nokogiri-1.11.7/ext/nokogiri
+make "DESTDIR=" clean
+
+current directory: /home/gitahievans/Development/Code/phase4/final-project/project-template-react-rails-api/vendor/bunle/ruby/2.7.0/gems/nokogiri-1.11.7/ext/nokogiri
+make "DESTDIR="
+compiling html_document.c
+compiling html_element_description.c
+compiling html_entity_lookup.c
+compiling html_sax_parser_context.c
+compiling html_sax_push_parser.c
+compiling libxml2_backwards_compat.c
+compiling nokogiri.c
+compiling test_global_handlers.c
+compiling xml_attr.c
+compiling xml_attribute_decl.c
+compiling xml_cdata.c
+compiling xml_comment.c
+compiling xml_document.c
+compiling xml_document_fragment.c
+compiling xml_dtd.c
+compiling xml_element_content.c
+compiling xml_element_decl.c
+compiling xml_encoding_handler.c
+compiling xml_entity_decl.c
+compiling xml_entity_reference.c
+compiling xml_namespace.c
+compiling xml_node.c
+compiling xml_node_set.c
+compiling xml_processing_instruction.c
+compiling xml_reader.c
+compiling xml_relax_ng.c
+compiling xml_sax_parser.c
+compiling xml_sax_parser_context.c
+compiling xml_sax_push_parser.c
+compiling xml_schema.c
+compiling xml_syntax_error.c
+compiling xml_text.c
+compiling xml_xpath_context.c
+compiling xslt_stylesheet.c
+linking shared-object nokogiri/nokogiri.so
+Cleaning files only used during build.
+rm -rf /home/gitahievans/Development/Code/phase4/final-project/project-template-react-rails-api/vendor/bunle/ruby/2.7.0/gems/nokogiri-1.11.7/ports/archives
+
+current directory: /home/gitahievans/Development/Code/phase4/final-project/project-template-react-rails-api/vendor/bunle/ruby/2.7.0/gems/nokogiri-1.11.7/ext/nokogiri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20221014-102784-1m1l7dm/nokogiri
