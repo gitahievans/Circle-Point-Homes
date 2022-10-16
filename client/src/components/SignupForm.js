@@ -6,8 +6,7 @@ import Error from '../styles/Error';
 import Textarea from '../styles/Textarea'
 import Button from "../styles/Button";
 
-function SignUp() {
-  const [user, setUser] = useState(null)
+function SignUpForm({ onLogin }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [userType, setUserType] = useState("");
@@ -37,7 +36,7 @@ function SignUp() {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -110,14 +109,14 @@ function SignUp() {
         <FormField>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
-        {/* <FormField>
+        <FormField>
           {errors.map((err) => (
             <Error key={err}>{err}</Error>
           ))}
-        </FormField> */}
+        </FormField>
       </form>
     </div>
   );
 }
 
-export default SignUp;
+export default SignUpForm;
