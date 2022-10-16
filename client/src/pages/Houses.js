@@ -30,9 +30,9 @@ function Houses() {
          <h5>title:{house.title}</h5>
          <h5>Category:{house.category}</h5>
          <h5>Price:{house.price[0]}</h5>
-        <h5>Location:{house.location.map((items) =>(
+        {/* <h5>Location:{house.location.map((items) =>( */}
           <h2>{house.location.city}</h2>
-        ))}</h5>
+        {/* ))}</h5> */}
         <h5>Landlord:{house.owner[1]}</h5>
         
         <p>{house.description}</p>

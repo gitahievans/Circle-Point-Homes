@@ -6,7 +6,7 @@ import Error from '../styles/Error';
 import Textarea from '../styles/Textarea'
 import Button from "../styles/Button";
 
-function SignUp({ setUser }) {
+function SignUpForm({ onLogin }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [userType, setUserType] = useState("");
@@ -18,6 +18,8 @@ function SignUp({ setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setErrors([]);
+    setIsLoading(true);
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -32,9 +34,11 @@ function SignUp({ setUser }) {
         bio,
       }),
     }).then((r) => {
-      console.log({r})
+      setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => setErrors(err.errors));
       }
     });
   }
@@ -108,6 +112,11 @@ function SignUp({ setUser }) {
         {/* <FormField>
           {errors.map((e) => (
             <Error key={e}>{e}</Error>
+=======
+        <FormField>
+          {errors.map((err) => (
+            <Error key={err}>{err}</Error>
+>>>>>>> 09e7ce4e603308b5cb02f485590fd9157388726f
           ))}
         </FormField> */}
       </form>
@@ -115,4 +124,4 @@ function SignUp({ setUser }) {
   );
 }
 
-export default SignUp;
+export default SignUpForm;
