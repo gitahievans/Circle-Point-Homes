@@ -13,7 +13,7 @@ function SignUpForm({ onLogin }) {
   const [bio, setBio] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  // const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState("");
   const [isLoading, setIsLoading] = useState("");
 
   function handleSubmit(e) {
