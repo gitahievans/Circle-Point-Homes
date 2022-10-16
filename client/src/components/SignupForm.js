@@ -107,9 +107,8 @@ function SignUpForm({ onLogin }) {
         <FormField>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
+
         </form>
-
-
     </div>
   );
 }
