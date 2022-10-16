@@ -26,7 +26,7 @@ function Houses() {
     <div className="grid" key={house.id}>
      
       <div className="cards">
-         <img  src="{house.image_url}" alt="building" style={{height:"50%"}} />
+         <img  src={"house.image_url"} alt="building" style={{height:"50%"}} />
          <h5>title:{house.title}</h5>
          <h5>Category:{house.category}</h5>
          <h5>Price:{house.price[0]}</h5>
