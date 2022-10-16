@@ -13,7 +13,7 @@ function SignUpForm({ onLogin }) {
   const [bio, setBio] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  //const [errors, setErrors] = useState("");
+  // const [errors, setErrors] = useState("");
   const [isLoading, setIsLoading] = useState("");
 
   function handleSubmit(e) {
@@ -37,7 +37,9 @@ function SignUpForm({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-      } 
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
     });
   }
 
@@ -107,9 +109,12 @@ function SignUpForm({ onLogin }) {
         <FormField>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
-        </form>
-
-
+        <FormField>
+          {errors.map((err) => (
+            <Error key={err}>{err}</Error>
+          ))}
+        </FormField>
+      </form>
     </div>
   );
 }
