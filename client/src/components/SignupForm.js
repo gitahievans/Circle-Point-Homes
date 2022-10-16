@@ -5,6 +5,7 @@ import Input from "../styles/Input";
 import Error from '../styles/Error';
 import Textarea from '../styles/Textarea'
 import Button from "../styles/Button";
+import Spacer from "../styles/Spacer";
 
 function SignUpForm({ onLogin }) {
   const [name, setName] = useState("");
@@ -47,6 +48,7 @@ function SignUpForm({ onLogin }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
+        <Spacer />
         <FormField>
           <Label htmlFor="name">Name</Label>
           <Input
@@ -108,11 +110,6 @@ function SignUpForm({ onLogin }) {
         </FormField>
         <FormField>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
-        </FormField>
-        <FormField>
-          {errors.map((err) => (
-            <Error key={err}>{err}</Error>
-          ))}
         </FormField>
       </form>
     </div>
