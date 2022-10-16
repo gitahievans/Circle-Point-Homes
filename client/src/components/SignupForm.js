@@ -37,9 +37,7 @@ function SignUpForm({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
+      } 
     });
   }
 
@@ -110,6 +108,8 @@ function SignUpForm({ onLogin }) {
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
         </form>
+
+
     </div>
   );
 }
