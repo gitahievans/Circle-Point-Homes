@@ -25,6 +25,7 @@ https://app.uizard.io/p/db7d27fe
 
 ## Database Schema
 
+
 ## Technologies computer
 ## Front-end Technology:
  
@@ -44,5 +45,5 @@ https://app.uizard.io/p/db7d27fe
     Elijah Bundi
     Bonaventure Ochieng
     Evans Gitahi
-    Gladys Angela
+    Gladys Angela 
 
