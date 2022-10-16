@@ -5,16 +5,14 @@ import Wrapper from "../styles/Wrapper";
 import Spacer from "../styles/Spacer";
 import Button from "../styles/Button";
 
-// function Login({ onLogin }) {
-function Login() {
+function Login({ onLogin }) {
     const [displayLogin, setDisplayLogin] = useState(true)
 
     return (
         <Wrapper>
             {displayLogin ? (
                 <>
-                    {/* <LoginForm onLogin={onLogin}/> */}
-                    <LoginForm />
+                    <LoginForm onLogin={onLogin}/>
                     <Spacer />
                     <p>
                         Don't have an account? &nbsp;
@@ -25,8 +23,7 @@ function Login() {
                 </>
             ) : (
                 <>
-                    {/* <SignUpForm onLogin={onLogin}/> */}
-                    <SignUpForm />
+                    <SignUpForm onLogin={onLogin}/>
                     <Spacer />
                     <p>
                         Already have an account? &nbsp;

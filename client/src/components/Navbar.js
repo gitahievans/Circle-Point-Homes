@@ -1,8 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "../styles/Navbar.css"
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import "../styles/Navbar.css";
+import Button from '../styles/Button';
+import SignUpForm from './SignupForm';
 
-function Navbar({ setUser }) {
+function Navbar({ user, setUser }) {
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleLogoutClick() {
     fetch("/logout", {
@@ -33,9 +36,13 @@ function Navbar({ setUser }) {
       <li className='nav-links'>
          <Link className='nav-text' to="/contact-us">Contact Us</Link>
       </li>
-      <li className='nav-links'>
-         <Link className='nav-text' to="/logout">Log out</Link>
-      </li>
+      {user ? (
+          <Button type="submit" onClick={handleLogoutClick}>Logout</Button>
+        ) : (
+          <>
+            <Link to="/login">Login</Link>
+          </>
+        )}
     </ul>
     </div>
   )
