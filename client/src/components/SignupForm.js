@@ -37,9 +37,7 @@ function SignUpForm({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
+      } 
     });
   }
 
@@ -109,11 +107,11 @@ function SignUpForm({ onLogin }) {
         <FormField>
           <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
         </FormField>
-        <FormField>
+        {/* <FormField>
           {errors.map((err) => (
             <Error key={err}>{err}</Error>
           ))}
-        </FormField>
+        </FormField> */}
       </form>
     </div>
   );
