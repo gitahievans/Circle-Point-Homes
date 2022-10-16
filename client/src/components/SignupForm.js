@@ -112,11 +112,10 @@ function SignUpForm({ onLogin }) {
         {/* <FormField>
           {errors.map((e) => (
             <Error key={e}>{e}</Error>
-=======
+
         <FormField>
           {errors.map((err) => (
             <Error key={err}>{err}</Error>
->>>>>>> 09e7ce4e603308b5cb02f485590fd9157388726f
           ))}
         </FormField> */}
       </form>
