@@ -9,7 +9,7 @@ const Houses = () => {
 	const AddHouseForm = () => {
     const [imageURL, setImageURL] = React.useState('');
     const [title, setTitle] = React.useState('');
-		const [category, setcategory] = React.useState('');
+		const [category, setCategory] = React.useState('');
 		const [price, setPrice] = React.useState('');
 		const [location, setLocation] = React.useState('');
     const [landlord, setLandlord] = React.useState('');
@@ -58,7 +58,7 @@ const Houses = () => {
 						type="text"
 						style={style}
 						value={title}
-						onChange={(event) => setLocation(event.target.value)}
+						onChange={(event) => setTitle(event.target.value)}
 					/>
 				</label>
         <label style={style}>
@@ -67,7 +67,7 @@ const Houses = () => {
 						type="text"
 						style={style}
 						value={category}
-						onChange={(event) => setLocation(event.target.value)}
+						onChange={(event) => setCategory(event.target.value)}
 					/>
 				</label>
         <label style={style}>
@@ -76,7 +76,7 @@ const Houses = () => {
 						type="text"
 						style={style}
 						value={price}
-						onChange={(event) => setLocation(event.target.value)}
+						onChange={(event) => setPrice(event.target.value)}
 					/>
 				</label>
         <label style={style}>
@@ -94,7 +94,7 @@ const Houses = () => {
 						type="text"
 						style={style}
 						value={landlord}
-						onChange={(event) => setDescription(event.target.value)}
+						onChange={(event) => setLandlord(event.target.value)}
 					/>
 					</label>
 				
