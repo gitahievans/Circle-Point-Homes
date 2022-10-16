@@ -1,5 +1,5 @@
 .homepage-container {
-    background: url('/public/images/img-home.jpg') center center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aG91c2UlMjBza3klMjBibHVlfGVufDB8fDB8dGVhbHw%3D&auto=format&fit=crop&w=500&q=60') center center/cover no-repeat;
     height: 100vh;
     width: 100%;
     display: flex;

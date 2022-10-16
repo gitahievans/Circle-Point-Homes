@@ -1,27 +1,15 @@
-// import React, {useState} from 'react'
-// import Login from "../pages/Login";
+import React, {useState} from 'react';
+import Homepage from '../pages/Homepage';
+// import Footer from '../pages/Footer';
 
 function Home({ user }) {
-  if (user) {
-    return <h1>Welcome, {user.username}!</h1>;
-  } else {
-    return <h1>Please Login or Sign Up</h1>;
-  }
-  //   // const [user] = useState("");
-  // return (
-  //   <div>
-  //       {(user.name) ? (
-  //               <div className="welcome">
-  //                   <br></br>
-  //                   <h1>Welcome, <span>{user.name}</span> !</h1>
-  //                   <br></br>
-  //                   <button className="logout-button"onClick={logout}>Logout</button>
-  //               </div>
-  //           ) : (
-  //               <Login login={login} logout={logout} error={error} errorMessage={errorMessage}/>)}
 
-  //   </div>
-  // )
+  return (
+    <>
+        <Homepage user={user}/>
+        {/* <Footer /> */}
+    </>
+  )
 }
 
 export default Home

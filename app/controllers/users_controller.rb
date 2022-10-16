@@ -19,6 +19,11 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
+    def newsletter
+        users = User.all
+        render json: user, serializer: NewsletterUserSerializer, status: :ok
+    end
+
 
 
     private

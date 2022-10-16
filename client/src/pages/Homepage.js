@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import "../styles/Homepage.css"
 
 
-function Homepage() {
+function Homepage({ user }) {
   return (
     <div className='homepage-container'>
-        <h1>CENTRE-POINT-HOMES</h1>
-        <p>...Karibu Nyumbani...</p>
+        <h1>CIRCLE-POINT-HOMES</h1>
+        <p>...Karibu Nyumbani, {user.name}!...</p>
         <div className='homepage-btns'>
             <Link to='/sign-up'>
                 <button 

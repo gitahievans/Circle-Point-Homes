@@ -6,6 +6,7 @@ import Input from '../styles/Input';
 import Button from '../styles/Button';
 
 function Footer() {
+
   return (
 <div className='footer-container'>
         <section className='footer-subscription'>
@@ -36,7 +37,7 @@ function Footer() {
             <div className='footer-link-wrapper'>
                 <div className='footer-link-items'>
                     <h2>About Us</h2>
-                    <Link to='/sign-up'>How it Works</Link>
+                    <Link to='/signup'>How it Works</Link>
                     <Link to='/'>Testimonials</Link>
                     <Link to='/'>Careers</Link>
                     <Link to='/'>Investors</Link>
