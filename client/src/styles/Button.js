@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const COLORS = {
   primary: {
-    "--main": "rgb(26,98,109)",
+    "--main": "indigo",
     "--accent": "white",
   },
   secondary: {
