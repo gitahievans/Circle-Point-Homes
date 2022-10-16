@@ -1,19 +1,34 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import "../styles/Footer.css";
+import FormField from '../styles/FormField';
+import Input from '../styles/Input';    
+import Button from '../styles/Button';
 
 function Footer() {
   return (
 <div className='footer-container'>
         <section className='footer-subscription'>
             <p className='footer-subscription-heading'>
-            ♻️ PointHomes
+                Join ♻️ PointHomes newsletter to receive our newest deals
             </p>
             <p className='footer-subscription-text'>
                 You can unsubscribe at any time
             </p>
             <div className='input-areas'>
                 <form>
-                    <input type='email' name='email' placeholder='Your Email' />
-                    <button className='btn--outline'>Subscribe</button>
+                  <FormField>
+                    <Input
+                      type="email"
+                      id="email"
+                      placeholder="your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <Button variant="fill" color="primary" type="submit">
+                      {isLoading ? "Loading..." : "Login"}
+                    </Button>
+                  </FormField>
                 </form>
             </div>
         </section>
@@ -56,10 +71,10 @@ function Footer() {
             <div className='social-media-wrap'>
                 <div className='footer-logo'>
                     <Link to='/' className='social-logo'>
-                        Fo-Gab <i className='fab fa-accusoft'></i>
+                    ♻️ PointHomes
                     </Link>
                 </div>
-                <small className='website-rights'>Fo-Gab © 2022</small>
+                <small className='website-rights'>♻️ PointHomes 2022</small>
                 <div className='social-icons'>
                     <Link 
                         className='social-icon-link facebook'

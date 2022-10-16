@@ -33,12 +33,9 @@ function Navbar({ setUser }) {
       <li className='nav-links'>
          <Link className='nav-text' to="/contact-us">Contact Us</Link>
       </li>
-
-        {/* ['Home', 'Landords', 'About'].map((item)=>(
-        <li key={item}>
-        {item}
-        </li>
-      )) */}
+      <li className='nav-links'>
+         <Link className='nav-text' to="/logout">Log out</Link>
+      </li>
     </ul>
     </div>
   )

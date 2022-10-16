@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 import Login from "../pages/Login";
 
-function Home({ login, logout, error, errorMessage }) {
+function Home() {
     const [user] = useState("");
   return (
     <div>
-        {(!!user.username) ? (
+        {(user.name) ? (
                 <div className="welcome">
                     <br></br>
-                    <h1>Welcome, <span>{user.username}</span> !</h1>
+                    <h1>Welcome, <span>{user.name}</span> !</h1>
                     <br></br>
                     <button className="logout-button"onClick={logout}>Logout</button>
                 </div>
