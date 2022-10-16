@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     def newsletter
-        users = User.all
+        user = User.find_by(email: params[:email])
         render json: user, serializer: NewsletterUserSerializer, status: :ok
     end
 

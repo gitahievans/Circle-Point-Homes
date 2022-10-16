@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/users/all', to: 'users#index'
   get '/users/:user_type', to: 'users#index_specific'
   patch '/me/update', to: 'users#update_user'
-  get '/users/newsletter', to: 'users#newsletter'
+  post '/users/newsletter', to: 'users#newsletter'
 
   # HOUSES GET/POST/PATCH/DELETE
   resources :houses

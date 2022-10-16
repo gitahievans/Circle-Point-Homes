@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import Homepage from '../pages/Homepage';
-// import Footer from '../pages/Footer';
+import Houses from '../pages/Houses';
 
-function Home({ user }) {
+function Home({ user, setUser }) {
 
   return (
     <>
         <Homepage user={user}/>
-        {/* <Footer /> */}
+        <Houses />
     </>
   )
 }
