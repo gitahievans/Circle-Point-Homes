@@ -1,7 +1,6 @@
-
 import * as React from 'react';
 
-const Houses = () => {
+const AddHouse = () => {
 	const houseURL = 'https://api-bright.herokuapp.com/homes';
 	const [houses, setHouses] = React.useState([]);
 	const [view, setView] = React.useState('houses');
@@ -190,4 +189,5 @@ const Houses = () => {
 	);
 };
 
-export default Houses;
+export default AddHouse;
+

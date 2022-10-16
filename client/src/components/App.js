@@ -31,9 +31,8 @@ function App() {
     <>        
       <Navbar user={user} setUser={setUser}/>
       <main>
-        <h1>Circle Point Homes</h1>
         <Routes >
-          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/" element={<Home user={user} setUser={setUser}/>}/>
           <Route exact path='/about' element={<About />} />
           <Route exact path='/houses' element={<Houses />} />
           <Route exact path='/contact-us' element={<ContactUs />} />
