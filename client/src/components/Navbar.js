@@ -40,8 +40,10 @@ function Navbar({ user, setUser }) {
           <Button type="submit" onClick={handleLogoutClick}>Logout</Button>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-          </>
+            <Link to='/login'>
+              <Button type="submit">Log In/Sign Up</Button>
+            </Link>
+        </>
         )}
     </ul>
     </div>

@@ -55,6 +55,7 @@ function SignUpForm({ onLogin }) {
             type="text"
             id="name"
             autoComplete="off"
+            placeholder="Enter name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -65,6 +66,7 @@ function SignUpForm({ onLogin }) {
             type="text"
             id="email"
             autoComplete="off"
+            placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -75,6 +77,7 @@ function SignUpForm({ onLogin }) {
             type="password"
             id="password"
             value={password}
+            placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
@@ -85,6 +88,7 @@ function SignUpForm({ onLogin }) {
             type="password"
             id="password_confirmation"
             value={passwordConfirmation}
+            placeholder="Confirm password"
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             autoComplete="current-password"
           />
@@ -95,6 +99,7 @@ function SignUpForm({ onLogin }) {
             type="text"
             id="userType"
             autoComplete="off"
+            placeholder="Enter landlord or tenant"
             value={userType}
             onChange={(e) => setUserType(e.target.value)}
           />
@@ -104,6 +109,7 @@ function SignUpForm({ onLogin }) {
           <Textarea
             rows="3"
             id="bio"
+            placeholder="Enter bio(min 50)"
             value={bio}
             onChange={(e) => setBio(e.target.value)}
           />

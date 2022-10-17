@@ -23,7 +23,10 @@ function App() {
 
   if (!user) {
     return (
-      <Login onLogin={setUser}/>
+      <>
+        <Navbar />
+        <Login onLogin={setUser}/>
+      </>      
     )
   }
 
